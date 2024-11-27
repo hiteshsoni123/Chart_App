@@ -1162,7 +1162,7 @@ async def handle_angel_ws(subscribe_for, tokens, interval, expiry, response_queu
                 print("lst:",tokens_list)
 
     try:
-        async with websockets.connect(URL, extra_headers=HEADERS, ping_interval=None, ping_timeout=ping_timeout) as angel_ws:  # Disable built-in ping
+        async with websockets.connect(URL, ping_interval=None, ping_timeout=ping_timeout) as angel_ws:  # Disable built-in ping
             print(f"WebSocket connection established for {subscribe_for}.")
 
             # Subscribe to tokens
